@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let register of registers">
+            <td>{{ register.name }}</td>
+            <td>{{ register.email }}</td>
+            <td>{{ register.cpf }}</td>
+            <td>{{ register.validated ? "Validado" : "Não validado"}}</td>
+        </tr>
+    </tbody>
+</table>
+  
