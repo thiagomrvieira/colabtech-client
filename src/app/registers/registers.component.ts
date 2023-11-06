@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { EmployeeResponse } from './employee-response.interface';
 import { Router } from '@angular/router'; // Certifique-se de importar o Router
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RegisterDetailsService } from '../register-details.service';
-import { RegisterDetailsModel } from '../register-details.model';
+import { RegisterDetailsService } from '../services/register-details.service';
+import { RegisterDetailsModel } from '../interfaces/register-details.model';
 
 @Component({
   selector: 'app-register-details',
