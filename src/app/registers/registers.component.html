@@ -1,48 +1,6 @@
-<div>
-    <h1>Lista de Registros</h1>
-    <div>
-        <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            [(ngModel)]="filters.name" 
-            (ngModelChange)="onFilterChange()" 
-            placeholder="Name" 
-            />
-    </div>
-    <div>
-        <input 
-            type="text" 
-            id="email" 
-            name="email" 
-            [(ngModel)]="filters.email" 
-            (ngModelChange)="onFilterChange()" 
-            placeholder="Email" 
-            />
-    </div>
-    <div>
-        <input 
-            type="text" 
-            id="phone" 
-            name="phone" 
-            [(ngModel)]="filters.phone" 
-            (ngModelChange)="onFilterChange()" 
-            placeholder="Telefone" 
-            />
-    </div>
-    <div>
-        <select 
-            id="validated" 
-            name="validated" 
-            [(ngModel)]="filters.validated" 
-            (ngModelChange)="onFilterChange()"
-            >
-                <option value=1>Validado</option>
-                <option value=0>Não validado</option>
-        </select>
-    </div>
-</div>
-<table>
+<h1 class="mt-4">Lista de Registros</h1>
+
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Nome</th>
@@ -52,11 +10,58 @@
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    [(ngModel)]="filters.name" 
+                    (ngModelChange)="onFilterChange()" 
+                    placeholder="Name" 
+                    class="form-control form-control-sm"
+                />
+            </td>
+            <td>
+                <input 
+                    type="text" 
+                    id="email" 
+                    name="email" 
+                    [(ngModel)]="filters.email" 
+                    (ngModelChange)="onFilterChange()" 
+                    placeholder="Email" 
+                    class="form-control form-control-sm"
+                />
+            </td>
+            <td>
+                <input 
+                    type="text" 
+                    id="phone" 
+                    name="phone" 
+                    [(ngModel)]="filters.phone" 
+                    (ngModelChange)="onFilterChange()" 
+                    placeholder="Telefone" 
+                    class="form-control form-control-sm"
+                />
+            </td>
+            <td>
+                <select 
+                    id="validated" 
+                    name="validated" 
+                    [(ngModel)]="filters.validated" 
+                    (ngModelChange)="onFilterChange()"
+                    class="form-control form-control-sm"
+                >
+                    <option value="1">Validado</option>
+                    <option value="0">Não validado</option>
+                </select>
+            </td>
+        </tr>
         <tr *ngFor="let register of registers" (click)="goToDetails(register.id)">
             <td>{{ register.name }}</td>
             <td>{{ register.email }}</td>
-            <td>{{ register.phone }}</td>
-            <td>{{ register.validated ? "Validado" : "Não validado" }}</td>
+            <td>{{ register.phone || 'N/A' }}</td>
+            <td>{{ register.validated ? 'Validado' : 'Não validado' }}</td>
         </tr>
     </tbody>
 </table>
