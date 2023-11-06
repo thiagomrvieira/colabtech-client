@@ -30,4 +30,18 @@ export class RegisterDetailsComponent implements OnInit {
   goBack(): void {
     this.router.navigate(['/registros']); // Redireciona de volta para a lista de registros
   }
+
+  validateRegistration() {
+    if (this.registerDetails && this.registerDetails.id) {
+      this.registerDetailsService
+        .updateRegister(this.registerDetails.id)
+        .subscribe((response: any) => {
+          if (response.validated) {
+            this.registerDetails.validated = true;
+          } else {
+            // Handle validation error
+          }
+        });
+    }
+  }
 }

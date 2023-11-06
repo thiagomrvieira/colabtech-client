@@ -12,4 +12,11 @@ export class RegisterDetailsService {
   getRegisterDetails(id: number) {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
+
+  updateRegister(id: number): any {
+    const url = `${this.apiUrl}/${id}`;
+    const data = { validated: true }; 
+  
+    return this.http.put(url, data);
+  }
 }
