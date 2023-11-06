@@ -1,4 +1,5 @@
 <div>
+    <h1>Lista de Registros</h1>
     <div>
         <input 
             type="text" 
@@ -51,7 +52,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let register of registers">
+        <tr *ngFor="let register of registers" (click)="goToDetails(register.id)">
             <td>{{ register.name }}</td>
             <td>{{ register.email }}</td>
             <td>{{ register.phone }}</td>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EmployeeResponse } from './employee-response.interface';
+import { Router } from '@angular/router'; // Certifique-se de importar o Router
+
 
 
 @Component({
@@ -13,7 +15,10 @@ export class RegistersComponent implements OnInit {
   filters: any = {};
   registers: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loadRegisters();
@@ -29,5 +34,9 @@ export class RegistersComponent implements OnInit {
 
   onFilterChange() {
     this.loadRegisters();
+  }
+
+  goToDetails(id: number): void {
+    this.router.navigate(['/registros', id]);
   }
 }

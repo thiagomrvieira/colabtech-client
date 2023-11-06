@@ -1,0 +1,15 @@
+<div *ngIf="registerDetails">
+    <h1>Detalhes do Registro</h1>
+    <p><strong>Nome:</strong> {{ registerDetails.name }}</p>
+    <p><strong>Email:</strong> {{ registerDetails.email }}</p>
+    <p><strong>Telefone:</strong> {{ registerDetails.phone ? registerDetails.phone : 'N/A' }}</p>
+    <p><strong>Status:</strong> {{ registerDetails.validated ? 'Validado' : 'Não Validado' }}</p>
+    
+    <button (click)="goBack()">Voltar</button>
+
+</div>
+  
+<div *ngIf="!registerDetails">
+    <p>Carregando detalhes do registro...</p>
+</div>
+  
