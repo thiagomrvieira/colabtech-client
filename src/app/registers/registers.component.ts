@@ -10,15 +10,24 @@ import { EmployeeResponse } from './employee-response.interface';
 })
 
 export class RegistersComponent implements OnInit {
+  filters: any = {};
   registers: any;
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.loadRegisters();
+  }
+
+  loadRegisters() {
     this.http
-      .get<EmployeeResponse>('http://127.0.0.1:8000/api/v1/employees')
-      .subscribe((response) => {
-        this.registers = response.data;
+      .get('http://127.0.0.1:8000/api/v1/employees', { params: this.filters })
+      .subscribe((data: any) => {
+        this.registers = data.data;
       });
+  }
+
+  onFilterChange() {
+    this.loadRegisters();
   }
 }

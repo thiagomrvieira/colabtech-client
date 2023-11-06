@@ -1,9 +1,52 @@
+<div>
+    <div>
+        <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            [(ngModel)]="filters.name" 
+            (ngModelChange)="onFilterChange()" 
+            placeholder="Name" 
+            />
+    </div>
+    <div>
+        <input 
+            type="text" 
+            id="email" 
+            name="email" 
+            [(ngModel)]="filters.email" 
+            (ngModelChange)="onFilterChange()" 
+            placeholder="Email" 
+            />
+    </div>
+    <div>
+        <input 
+            type="text" 
+            id="phone" 
+            name="phone" 
+            [(ngModel)]="filters.phone" 
+            (ngModelChange)="onFilterChange()" 
+            placeholder="Telefone" 
+            />
+    </div>
+    <div>
+        <select 
+            id="validated" 
+            name="validated" 
+            [(ngModel)]="filters.validated" 
+            (ngModelChange)="onFilterChange()"
+            >
+                <option value=1>Validado</option>
+                <option value=0>Não validado</option>
+        </select>
+    </div>
+</div>
 <table>
     <thead>
         <tr>
             <th>Nome</th>
             <th>Email</th>
-            <th>CPF</th>
+            <th>Telefone</th>
             <th>Status</th>
         </tr>
     </thead>
@@ -11,9 +54,8 @@
         <tr *ngFor="let register of registers">
             <td>{{ register.name }}</td>
             <td>{{ register.email }}</td>
-            <td>{{ register.cpf }}</td>
-            <td>{{ register.validated ? "Validado" : "Não validado"}}</td>
+            <td>{{ register.phone }}</td>
+            <td>{{ register.validated ? "Validado" : "Não validado" }}</td>
         </tr>
     </tbody>
 </table>
-  
