@@ -1,27 +1,57 @@
-# ColabtechClient
+# Projeto Angular - Guia do Desenvolvedor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+Este é um projeto Angular criado para fins de demonstração. Ele inclui um componente de lista de registros e um componente de detalhes de registro, juntamente com a funcionalidade de filtragem.
 
-## Development server
+## Requisitos do Sistema
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de começar, verifique se o seu sistema atende aos seguintes requisitos:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/) (v14.17.0 ou superior)
+- [Angular CLI](https://cli.angular.io/) (v12 ou superior)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configuração do Projeto
 
-## Build
+Siga estas etapas para configurar e iniciar o projeto:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone o repositório:**
+    ```shell
+    git clone https://github.com/thiagomrvieira/colabtech-client
+    cd colabtech-client
+    ```
 
-## Running unit tests
+2. **Instale dependências:**
+    ```shell
+    npm install
+    ```
+3. **Inicie o servidor de desenvolvimento:**
+    ```shell
+    ng serve
+    ```
+    ## Estrutura do Projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Aqui está uma visão geral da estrutura de pastas e arquivos do projeto:
 
-## Running end-to-end tests
+- `src/app/registers`: Contém os componentes relacionados à lista de registros.
+- `src/app/register-details`: Contém os componentes relacionados aos detalhes do registro.
+- `src/app/services`: Contém os serviços que fazem solicitações à API.
+- `src/app/interfaces`: Contém as interfaces utilizadas no projeto.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Funcionalidades
 
-## Further help
+O projeto Angular inclui as seguintes funcionalidades:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Lista de registros com filtragem por nome, email, telefone e status de validação.
+- Detalhes individuais de registro com informações de nome, email, telefone, CPF, status e habilidades.
+- Validação de registro.
+- Integração com uma API para recuperar dados.
+
+## Funcionalidades Pendentes
+
+Aqui estão as funcionalidades que estão pendentes de implementação no projeto:
+
+- Feature de criação de colaboradores com validações.
+- Padrão de rotas conforme especificado.
+
+## Contato
+
+Se você tiver alguma dúvida ou precisar de assistência adicional, não hesite em entrar em contato.
